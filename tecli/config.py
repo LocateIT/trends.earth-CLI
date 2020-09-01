@@ -12,7 +12,8 @@ config_path = os.path.expanduser('~') + '/.tecli.yml'
 
 # Default values that can be altered in local .tecli.yml file
 settings = {
-    'url_api': 'https://api.trends.earth'
+    # 'url_api': 'https://api.trends.earth'
+    'url_api': 'http://localhost:3000'
 }
 
 def set(var_name, value):
