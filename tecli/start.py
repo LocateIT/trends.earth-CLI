@@ -43,7 +43,7 @@ def run_docker(tempdir, dockerid, param):
     try:
         service_account = read_gee_service_account()
         rollbar_token = config.get('ROLLBAR_SCRIPT_TOKEN')
-        subprocess.run("docker run -e ENV=dev -e EE_SERVICE_ACCOUNT_JSON={2} -e ROLLBAR_SCRIPT_TOKEN={3} --rm {0} {1}".format(dockerid, param, service_account, rollbar_token), shell=True, check=True, cwd=tempdir)
+        subprocess.run("docker run -e ENV=dev -e EE_SERVICE_ACCOUNT_JSON={2} -e ROLLBAR_SCRIPT_TOKEN={3} {0} {1}".format(dockerid, param, service_account, rollbar_token), shell=True, check=True, cwd=tempdir)
         return True
     except subprocess.CalledProcessError as error:
         logging.error(error)
